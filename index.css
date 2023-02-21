@@ -1,0 +1,221 @@
+body {
+    background: #8acdeb;
+    height: 100%;
+    font-family: 'Fredoka One', cursive;
+    font-size: 40px;
+    color: #f6f1db;
+}
+
+.parallax {
+    text-align: center;
+    overflow: hidden;
+    background-image: url("nolan.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-y: 20%;
+}
+
+.parallax.before {
+    border: #efede8 5px solid;
+    border-radius: max(32px, min(32px, (100% - 400px + 1px) * 9999)) / 32px;
+}
+
+.parallax.after {
+    background-image: url("cake.jpg");
+}
+
+img {
+    opacity: 0;
+    height: 70vh;
+}
+
+.bubble-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    height: 90vh;
+    width: 80vw;
+}
+
+.bubble-container.first {
+    left: 50vw;
+    top: 50vh;
+}
+
+.bubble-container.second {
+    left: 50vw;
+    bottom: 10vh;
+}
+
+.bubble-container.third  {
+    left: 40vw;
+    bottom: 20vh;
+}
+
+.bubble-container.fourth  {
+    left: 60vw;
+    top: 5vh;
+}
+
+#invitation {
+    background-color: #8acdeb;
+    height: fit-content;
+    text-align: center;
+}
+
+#invitation>p {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#invitation>h2 {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+#details {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 1vh 0 10vh 0;
+    border: #efede8 5px solid;
+    border-radius: max(32px, min(32px, (100% - 400px + 1px) * 9999)) / 32px;
+}
+
+a {
+    text-decoration: none;
+    color: #f6f1db;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #efede8
+}
+
+.bubble {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    height: 4.5vw;
+    width: 4.5vw;
+    background: #8acdeb;
+    border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+    opacity: 0.8;
+    border: 2px solid #8acdeb;
+}
+
+.bubble.medium {
+    height: 5.5vw;
+    width: 5.5vw;
+}
+
+.bubble.large {
+    height: 6.5vw;
+    width: 6.5vw;
+}
+
+.bubble::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(78, 190, 250, 0.89);
+    border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+    box-shadow: -4px 5px 5px #8acdeb, -3px 4px 5px #8acdeb, inset -6px 6px 10px #8acdeb, inset 2px 6px 10px rgba(26, 168, 229, 0.68), inset 20px -20px 22px white, inset 40px -40px 44px #a8ceff;
+}
+
+.bubble::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: #E6FDFB;
+    border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+    left: 30px;
+    top: 10px;
+    box-shadow: 16px 40px 0 -10px white;
+    opacity: 0.8;
+}
+
+@-webkit-keyframes bubble1 {
+    0% {transform: translateY(0) translateX(0) scale(1); opacity: .9;}
+    50% {transform: translateY(-4rem) translateX(-0.5rem) scale(1); opacity: .8;}
+    100% {transform: translateY(-6rem) translateX(1rem) scale(1); opacity: 0;}
+}
+
+@-webkit-keyframes bubble2 {
+    0% {transform: translateY(0) translateX(0) scale(1); opacity: .9;}
+    50% {transform: translateY(-2rem) translateX(1rem) scale(1); opacity: .8;}
+    100% {transform: translateY(-6rem) translateX(.5rem) scale(1); opacity: 0;}
+}
+
+.bubble1 {
+    left: 60vw;
+    bottom: -4vh;
+    -webkit-animation: bubble1 5s ease-in-out infinite;
+    animation: bubble1 5s ease-in-out infinite;
+}
+
+.bubble2 {
+    left: 67vw;
+    top: 40vh;
+    z-index: -1;
+    border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+    -webkit-animation: bubble1 4s ease-in-out infinite;
+    animation: bubble1 4s ease-in-out infinite;
+}
+
+.bubble3 {
+    left: 10vw;
+    bottom: -5vh;
+    -webkit-animation: bubble2 3s ease-in-out infinite;
+    animation: bubble2 3s ease-in-out infinite;
+}
+
+.bubble4 {
+    left: 20vw;
+    top: 30vh;
+    z-index: -1;
+    border-radius: 46% 50% 39% 54% / 56% 57% 50% 50%;
+    -webkit-animation: bubble2 4s ease-in-out infinite;
+    animation: bubble2 4s ease-in-out infinite;
+}
+
+.bubble5 {
+    left: 5vw;
+    bottom: 30vh;
+    -webkit-animation: bubble1 4s ease-in-out infinite;
+    animation: bubble1 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+    50% {
+        opacity: 120%;
+        scale: 1.4;
+    }
+    100% {
+        opacity: 50%;
+    }
+}
+
+.arrow {
+    position: absolute;
+    border: solid rgba(255, 255, 255, 0.44);
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-top: -50px;
+    transform: rotateZ(45deg);
+    box-shadow: 4px 4px 2px 1px rgba(26, 168, 229, 0.68);
+    opacity: 50%;
+}
+
+.arrow.down {
+    animation: glow 3s ease-out 3;
+}
