@@ -1,35 +1,74 @@
 body {
-    background: #8acdeb;
-    height: 100%;
     font-family: 'Fredoka One', cursive;
     font-size: 40px;
+    background: #8acdeb;
     color: #f6f1db;
 }
 
+/* Parallax effect (before and after photos change on scroll) */
 .parallax {
     text-align: center;
     overflow: hidden;
-    background-image: url("nolan.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    /* Safari does not scale images in the same way Chrome does
+    - use background-position-y for a better centering experience */
     background-position-y: 20%;
 }
 
 .parallax.before {
-    border: #efede8 5px solid;
-    border-radius: max(32px, min(32px, (100% - 400px + 1px) * 9999)) / 32px;
+    background-image: url("nolan.jpg");
+    height: 80vh;
+    /* Set a max height to avoid excessive whitespace on certain portrait browsers */
+    max-height: 100rem;
 }
 
 .parallax.after {
     background-image: url("cake.jpg");
+    height: 80vh;
 }
 
-img {
-    opacity: 0;
-    height: 70vh;
+#header {
+    background-color: #8acdeb;
+    height: fit-content;
+    text-align: center;
 }
 
+#header>p {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#header>h2 {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+#details {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    /* Raise z-index over bubble container */
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 1vh 0 10vh 0;
+    border: #efede8 5px solid;
+    border-radius: 32px;
+}
+
+a {
+    text-decoration: none;
+    color: #f6f1db;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #efede8
+}
+
+/* Bubble containers and bubble styles */
 .bubble-container {
     position: absolute;
     display: flex;
@@ -57,44 +96,6 @@ img {
 .bubble-container.fourth  {
     left: 60vw;
     top: 5vh;
-}
-
-#invitation {
-    background-color: #8acdeb;
-    height: fit-content;
-    text-align: center;
-}
-
-#invitation>p {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-#invitation>h2 {
-    margin-top: 20px;
-    margin-bottom: 60px;
-}
-
-#details {
-    font-family: 'Poppins', sans-serif;
-    height: 100%;
-    z-index: 2;
-    position: relative;
-    text-align: center;
-    padding-bottom: 20px;
-    margin: 1vh 0 10vh 0;
-    border: #efede8 5px solid;
-    border-radius: max(32px, min(32px, (100% - 400px + 1px) * 9999)) / 32px;
-}
-
-a {
-    text-decoration: none;
-    color: #f6f1db;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #efede8
 }
 
 .bubble {
@@ -193,6 +194,7 @@ a:hover {
     animation: bubble1 4s ease-in-out infinite;
 }
 
+/* Arrow for scroll indicator */
 @keyframes glow {
     50% {
         opacity: 120%;
@@ -217,5 +219,6 @@ a:hover {
 }
 
 .arrow.down {
+    -webkit-animation: glow 3s ease-out 3;
     animation: glow 3s ease-out 3;
 }
